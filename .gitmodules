@@ -1,0 +1,3 @@
+[submodule "taylor1plus"]
+	path = taylor1plus
+	url = https://gitlab.com/ljlin/taylor1plus
