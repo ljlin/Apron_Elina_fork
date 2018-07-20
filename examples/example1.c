@@ -11,7 +11,8 @@
 #include "oct.h"
 #include "pk.h"
 #include "pkeq.h"
-#include "ap_ppl.h"
+#include "t1p.h"
+//#include "ap_ppl.h"
 
 void ex1(ap_manager_t* man)
 {
@@ -463,19 +464,22 @@ int main()
   ex3(man);
   ap_manager_free(man);
 
-  man = ap_ppl_poly_manager_alloc(true);
-  ex1(man);
-  ex2(man);
-  ex3(man);
-  ap_manager_free(man);
+//  man = ap_ppl_poly_manager_alloc(true);
+//  ex1(man);
+//  ex2(man);
+//  ex3(man);
+//  ap_manager_free(man);
 
   man = pkeq_manager_alloc();
   ex2(man);
   ex3(man);
   ap_manager_free(man);
 
-  man = ap_ppl_grid_manager_alloc();
-  ex2(man);
-  ex3(man);
-  ap_manager_free(man);
+//  man = ap_ppl_grid_manager_alloc();
+//  ex2(man);
+//  ex3(man);
+//  ap_manager_free(man);
+    man = t1p_manager_alloc();
+    ex2(man);
+    ap_manager_free(man);
 }

@@ -21,16 +21,19 @@ OCAMLINC = \
 -I $(APRON_PREFIX)/lib \
 -I $(CAML_PREFIX)/lib/ocaml/apron
 
-OCAMLPACKAGES = -package "apron.boxMPQ,apron.octMPQ,apron.polkaMPQ,apron.ppl,apron.polkaGrid" -linkpkg
+OCAMLPACKAGES = -package "apron.boxMPQ,apron.octMPQ,apron.polkaMPQ" -linkpkg
+#OCAMLPACKAGES = -package "apron.boxMPQ,apron.octMPQ,apron.polkaMPQ,apron.ppl,apron.polkaGrid" -linkpkg
 
-all: C ml
+all: C
+#all: C ml
 
 # C examples
 
 C: example1g
 
 %g: %g.o
-	$(CXX) $(CXXFLAGS) $(ICFLAGS) $(LCFLAGS) -o $@  $< -lap_ppl_debug -lppl -lgmpxx -lpolkaMPQ_debug -loctMPQ_debug -lboxMPQ_debug -lapron_debug -litvMPQ_debug -litvD_debug -lmpfr -lgmp
+	$(CXX) $(CXXFLAGS) $(ICFLAGS) $(LCFLAGS) -o $@  $< -lt1pD_debug -lgmpxx -lpolkaMPQ_debug -loctMPQ_debug -lboxMPQ_debug -lapron_debug -litvMPQ_debug -litvD_debug -lmpfr -lgmp
+#	$(CXX) $(CXXFLAGS) $(ICFLAGS) $(LCFLAGS) -o $@  $< -lap_ppl_debug -lppl -lgmpxx -lpolkaMPQ_debug -loctMPQ_debug -lboxMPQ_debug -lapron_debug -litvMPQ_debug -litvD_debug -lmpfr -lgmp
 
 %g.o: %.c
 	$(CC) $(CFLAGS_DEBUG) $(ICFLAGS) -c -o $@ $<
