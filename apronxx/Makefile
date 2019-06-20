@@ -21,7 +21,7 @@ include ../vars.mk
 
 # Machine-independent compilation flags.
 ICXXFLAGS = $(ICFLAGS) $(BASE_ICFLAGS) \
-	-I../box -I../newpolka -I../octagons -I../taylor1plus
+	-I../box -I../newpolka -I../octagons -I../taylor1plus -I ../elina_zonotope
 LDFLAGS += $(BASE_LIFLAGS)
 
 #---------------------------------------
@@ -47,7 +47,8 @@ CCINC = \
  apxx_expr1.hh               apxx_oct.hh                apxx_texpr1_inline.hh		\
  apxx_generator0.hh          apxx_oct_inline.hh         apxx_var.hh			\
  apxx_generator0_inline.hh   apxx_polka.hh              apxx_var_inline.hh		\
- apxx_t1p.hh apxx_t1p_inline.hh	
+ apxx_t1p.hh apxx_t1p_inline.hh	\
+ apxx_zonotope.hh apxx_zonotope_inline.hh
 
 LIBS = $(LDFLAGS) -lapron -lgmp -lgmpxx -lmpfr -lm
 LIBS_DEBUG = $(LDFLAGS) -lapron_debug -lgmp -lgmpxx -lmpfr -lm
